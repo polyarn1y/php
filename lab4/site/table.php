@@ -1,11 +1,12 @@
 <?php
 $cols = 10;
 $rows = 10;
-$color = '#ffff00';
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	$cols = abs((int) $_POST['cols']);
-	$rows = abs((int) $_POST['rows']);
-	$color = trim(strip_tags($_POST['color']));
+$color = '#ff0000';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $cols = abs((int) $_POST['cols']);
+    $rows = abs((int) $_POST['rows']);
+    $color = trim(strip_tags($_POST['color']));
 }
 ?>
 <!DOCTYPE html>
@@ -22,15 +23,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <form action='<?=$_SERVER['REQUEST_URI']?>' method='POST'>
       <label>Количество колонок: </label>
       <br>
-      <input name='cols' type='text' value="<?=@$_POST['cols']?>">
+      <input name='cols' type='text' value="<?= htmlspecialchars($cols) ?>">
       <br>
       <label>Количество строк: </label>
       <br>
-      <input name='rows' type='text' value="<?=@$_POST['rows']?>">
+      <input name='rows' type='text' value="<?= htmlspecialchars($rows) ?>">
       <br>
       <label>Цвет: </label>
       <br>
-      <input name='color' type='color' value="<?=@$_POST['color']?>" list="listColors">
+      <input name='color' type='color' value="<?= htmlspecialchars($color) ?>" list="listColors">
 	<datalist id="listColors">
 		<option>#ff0000</option>/>
 		<option>#00ff00</option>
