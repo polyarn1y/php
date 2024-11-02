@@ -37,7 +37,7 @@ if ($result !== null) {
 <form action="index.php?id=calc" method="post">
 
 <p><label for="num1">Число 1</label><br>
-<input type="text" name="num1" id="num1" required></p>
+<input type="number" name="num1" id="num1" required></p>
 
 <p><label for="operator">Оператор</label><br>
 <select name="operator" id="operator">
@@ -48,7 +48,7 @@ if ($result !== null) {
 </select></p>
 
 <p><label for="num2">Число 2</label><br>
-<input type="text" name="num2" id="num2" required></p>
+<input type="number" name="num2" id="num2" required></p>
 
 <button type="submit">Считать!</button>
 
