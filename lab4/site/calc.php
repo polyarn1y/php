@@ -28,18 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
-?>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Калькулятор</title>
-</head>
-<body>
 
-<?php
 if ($result !== null) {
     echo "<h2>Результат: $result</h2>";
 }
@@ -48,7 +37,7 @@ if ($result !== null) {
 <form action="index.php?id=calc" method="post">
 
 <p><label for="num1">Число 1</label><br>
-<input type="number" name="num1" id="num1" required></p>
+<input type="number" step=any name="num1" id="num1" value="<?php echo htmlspecialchars($num1); ?>" required></p>
 
 <p><label for="operator">Оператор</label><br>
 <select name="operator" id="operator">
@@ -59,11 +48,8 @@ if ($result !== null) {
 </select></p>
 
 <p><label for="num2">Число 2</label><br>
-<input type="number" name="num2" id="num2" required></p>
+<input type="number" step=any name="num2" id="num2" value="<?php echo htmlspecialchars($num2); ?>" required></p>
 
 <button type="submit">Считать!</button>
 
 </form>
-
-</body>
-</html>
