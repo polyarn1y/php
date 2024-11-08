@@ -4,13 +4,13 @@
 
         $subject = htmlspecialchars(trim($_POST['subject']));
         $body = htmlspecialchars(trim($_POST['body']));
-
-        $to = "vladimirkalinichev@vk.com"; 
+        $receiver = htmlspecialchars(trim($_POST['receiver']));
+    
         $headers = "From: admin@center.ogu\r\n";
         $headers .= "Reply-To: admin@center.ogu\r\n";
         $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
 
-        if (mail($to, $subject, $body, $headers)) {
+        if (mail($receiver, $subject, $body, $headers)) {
             $message = "Сообщение доставлено";
         } else {
             $message = "Ошибка";
@@ -46,6 +46,10 @@
     <address>123456 Москва, Малый Американский переулок 21</address>
     <h3>Задайте вопрос</h3>
     <form action='' method='post'>
+      <label>Ваша почта: </label>
+      <br>
+      <input name='receiver' type='text' size="50">
+      <br>
       <label>Тема письма: </label>
       <br>
       <input name='subject' type='text' size="50">
@@ -56,6 +60,7 @@
       <br>
       <br>
       <input type='submit' value='Отправить'>
+      <br>
       <span><?php echo $message; ?></span>
     </form>
     <!-- Область основного контента -->
