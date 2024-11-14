@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
 
-$db = mysqli_connect($host, $user, $pass, $db_name);
+$db = mysqli_connect(HOST, USER, PASS, DB_NAME);
 if (!$db) {
     die("Ошибка подключения: " . mysqli_connect_error());
 }
