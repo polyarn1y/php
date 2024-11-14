@@ -1,8 +1,5 @@
 <?php
-$host = 'localhost';
-$user = 'f1030987_db';
-$pass = 'NJsFvpwXpejE23i';
-$db_name = 'f1030987_db';
+require_once 'config.php';
 
 $db = mysqli_connect($host, $user, $pass, $db_name);
 if (!$db) {
