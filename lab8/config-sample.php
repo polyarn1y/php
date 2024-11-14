@@ -1,6 +1,6 @@
 <?php
-const $host = 
-const $user =
-const $pass =
-const $db_name =
+const HOST = 
+const USER =
+const PASS =
+const DB_NAME =
 ?>
